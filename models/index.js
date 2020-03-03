@@ -7,6 +7,9 @@ const PostSchema = require('./Post')
 const User = UserSchema(db, Sequelize)
 const Post = PostSchema(db, Sequelize)
 
+User.hasMany(Post)
+Post.belongsTo(User)
+
    
 db.sync({force: false})
     .then(() => console.log('DB synced'.toUpperCase()))
