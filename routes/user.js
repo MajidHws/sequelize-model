@@ -15,10 +15,15 @@ router.get('/', async (req, res) => {
         include: [
             {
                 model: Post, 
-                attributes: ['id', 'title']
+                attributes: ['id', 'title'],
+                //limit: 2,
+                //offset: 3,
+                count: true
             }
         ],
-        attributes: ['id', 'name']
+        attributes: ['id', 'name'],
+        //limit: 3,
+        //offset: 3
     })
 
     res.send(users)
