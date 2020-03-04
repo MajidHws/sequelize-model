@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { User, Post } = require('../models')
+const { User, Post, Nationality } = require('../models')
 
 router.post('/', async (req, res) => {
     const user = new User(req.body)
@@ -19,6 +19,10 @@ router.get('/', async (req, res) => {
                 //limit: 2,
                 //offset: 3,
                 count: true
+            },
+            {
+                model: Nationality,
+                attributes: ['name']
             }
         ],
         attributes: ['id', 'name'],

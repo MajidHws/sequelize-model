@@ -6,12 +6,16 @@ const db = require('./config/database')
 
 const userRoute = require('./routes/user')
 const postRoute = require('./routes/post')
+const nationalityRoute = require('./routes/nationality')
+const userNationalityRoute = require('./routes/userNationality')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/user/', userRoute)
 app.use('/post/', postRoute)
+app.use('/nationality/', nationalityRoute)
+app.use('/user-nationality/', userNationalityRoute)
 
 
 db.authenticate()
