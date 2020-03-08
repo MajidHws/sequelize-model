@@ -1,8 +1,9 @@
 const express = require('express')
-const app = express()
-const PORT = 3000
-
 const db = require('./config/database')
+
+const app = express()
+
+const PORT = 3000
 
 const userRoute = require('./routes/user')
 const postRoute = require('./routes/post')
