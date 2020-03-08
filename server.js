@@ -19,10 +19,12 @@ app.use('/nationality/', nationalityRoute)
 app.use('/user-nationality/', userNationalityRoute)
 
 
-db.authenticate()
-    .then(() => console.log('DB authenticate'.toUpperCase()))
-    .catch(e => console.log(e))
 
-app.listen(PORT, () => {
-    console.log('server is running on port '.toUpperCase() + PORT);
-})
+db.authenticate()
+    .then(() => {
+        console.log('DB authenticate'.toUpperCase())
+        app.listen(PORT, () => {
+            console.log('server is running on port '.toUpperCase() + PORT);
+        })
+    })
+    .catch(e => console.log(e))
