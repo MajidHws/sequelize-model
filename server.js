@@ -13,10 +13,10 @@ const userNationalityRoute = require('./routes/userNationality')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/user/', userRoute)
-app.use('/post/', postRoute)
-app.use('/nationality/', nationalityRoute)
-app.use('/user-nationality/', userNationalityRoute)
+app.use('/user', userRoute)
+app.use('/post', postRoute)
+app.use('/nationality', nationalityRoute)
+app.use('/user-nationality', userNationalityRoute)
 app.use('/', (req, res) => {
     res.send('NONE!')
 })
